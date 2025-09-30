@@ -7,6 +7,9 @@ const config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '380px',
+      },
       colors: {
         // Dark theme base colors
         background: "hsl(var(--background))",

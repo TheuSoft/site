@@ -206,7 +206,7 @@ export default function Home() {
         <div className="relative z-10">
           <div className="text-center mb-16">
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent mx-auto mb-8" />
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold mb-6">
               <span className="heading-gradient">EXPERTISE</span>
             </h2>
             <p className="text-gray-400 font-mono text-sm">
@@ -214,7 +214,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             <MotionDiv
               variants={slideInLeft}
               initial="hidden"
@@ -322,7 +322,7 @@ export default function Home() {
         <div className="relative z-10">
           <div className="text-center mb-16">
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent mx-auto mb-8" />
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">
                 PORTFOLIO
               </span>
@@ -337,7 +337,7 @@ export default function Home() {
           </div>
 
           <MotionDiv
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -473,9 +473,9 @@ export default function Home() {
         <div className="relative z-10 text-center space-y-12">
           <div className="space-y-6">
             <div className="w-32 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent mx-auto" />
-            <h2 className="text-4xl sm:text-5xl font-bold font-mono">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold font-mono">
               <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                READY_TO_INNOVATE?
+                PRONTO_PARA_INOVAR?
               </span>
             </h2>
             <p className="text-gray-400 font-mono text-sm">
@@ -490,7 +490,7 @@ export default function Home() {
               digitais.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-center">
               <MotionDiv
                 className="futuristic-border p-6"
                 initial={{ opacity: 0, y: 50, rotateX: -30 }}

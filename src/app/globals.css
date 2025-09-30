@@ -169,6 +169,15 @@ body::after {
   margin-left: auto;
   margin-right: auto;
   max-width: 80rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 380px) {
+  .container-responsive {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
 
 .heading-gradient {
@@ -455,4 +464,69 @@ html {
 
 .btn-futuristic:hover::before {
   left: 100%;
+}
+
+/* Responsividade para telas muito pequenas (< 380px) */
+@media (max-width: 380px) {
+  /* Ajustar padding dos cards */
+  .futuristic-border {
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+  
+  /* Ajustar tamanho de texto nos cards */
+  .futuristic-border h3,
+  .futuristic-border .text-lg {
+    font-size: 1rem !important;
+  }
+  
+  .futuristic-border p,
+  .futuristic-border .text-sm {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Garantir que cards não excedam a largura da tela */
+  .futuristic-border {
+    max-width: calc(100vw - 1.5rem) !important;
+    box-sizing: border-box;
+  }
+  
+  /* Ajustar badges e elementos pequenos */
+  .futuristic-border .badge,
+  .futuristic-border .text-xs {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* Responsividade específica para dimensões problemáticas */
+@media (min-width: 390px) and (max-width: 420px) {
+  /* Ajustar títulos H2 que estão sobresaindo */
+  h2.text-4xl {
+    font-size: 2rem !important; /* em vez de text-4xl (2.25rem) */
+    line-height: 1.2 !important;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  /* Garantir que títulos com gradiente também se ajustem */
+  h2 span.heading-gradient,
+  h2 span.bg-gradient-to-r {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ajustar cards para evitar overflow */
+  .futuristic-border {
+    max-width: calc(100vw - 2rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Ajustar padding lateral geral */
+  .container-responsive {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }

@@ -99,7 +99,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-dark-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © {currentYear} MECrafts Portfolio.
+              © {currentYear} Matheus Carvalho Portfolio.
             </p>
             <div className="flex items-center space-x-2 text-gray-400 text-sm"></div>
           </div>

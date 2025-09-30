@@ -7,34 +7,35 @@ import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export const metadata: Metadata = {
-  title: "Portfolio - Desenvolvedor Full Stack",
+  title: "Portfolio - Analista de Sistemas e Suporte Técnico",
   description:
-    "Portfolio profissional de desenvolvedor full stack especializado em React, Next.js, Node.js e tecnologias modernas.",
+    "Portfolio profissional de analista de sistemas e suporte técnico especializado em soluções de TI, atendimento ao cliente, manutenção e infraestrutura.",
   keywords: [
-    "desenvolvedor",
-    "full stack",
-    "react",
-    "nextjs",
-    "nodejs",
+    "analista de sistemas",
+    "suporte técnico",
+    "TI",
+    "infraestrutura",
+    "atendimento",
+    "manutenção",
     "portfolio",
   ],
-  authors: [{ name: "Desenvolvedor Portfolio" }],
-  creator: "Desenvolvedor Portfolio",
-  publisher: "Desenvolvedor Portfolio",
+  authors: [{ name: "Analista de Sistemas Portfolio" }],
+  creator: "Analista de Sistemas Portfolio",
+  publisher: "Analista de Sistemas Portfolio",
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://portfolio.com",
-    title: "Portfolio - Desenvolvedor Full Stack",
+    url: "https://mcraft-ti.vercel.app/",
+    title: "Portfolio - Analista de Sistemas e Suporte Técnico",
     description:
-      "Portfolio profissional de desenvolvedor full stack especializado em React, Next.js, Node.js e tecnologias modernas.",
+      "Portfolio profissional de analista de sistemas e suporte técnico especializado em soluções de TI, atendimento ao cliente, manutenção e infraestrutura.",
     siteName: "Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio - Desenvolvedor Full Stack",
+    title: "Portfolio - Analista de Sistemas e Suporte Técnico",
     description:
-      "Portfolio profissional de desenvolvedor full stack especializado em React, Next.js, Node.js e tecnologias modernas.",
+      "Portfolio profissional de analista de sistemas e suporte técnico especializado em soluções de TI, atendimento ao cliente, manutenção e infraestrutura.",
     creator: "@portfolio",
   },
   robots: {
