@@ -1,0 +1,21 @@
+{
+  "name": "Portfolio - Desenvolvedor Full Stack",
+  "short_name": "Portfolio",
+  "description": "Portfolio profissional de desenvolvedor full stack",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#7ed957",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}

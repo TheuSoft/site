@@ -473,24 +473,24 @@ html {
     padding: 1rem !important;
     margin: 0.5rem 0 !important;
   }
-  
+
   /* Ajustar tamanho de texto nos cards */
   .futuristic-border h3,
   .futuristic-border .text-lg {
     font-size: 1rem !important;
   }
-  
+
   .futuristic-border p,
   .futuristic-border .text-sm {
     font-size: 0.875rem !important;
   }
-  
+
   /* Garantir que cards não excedam a largura da tela */
   .futuristic-border {
     max-width: calc(100vw - 1.5rem) !important;
     box-sizing: border-box;
   }
-  
+
   /* Ajustar badges e elementos pequenos */
   .futuristic-border .badge,
   .futuristic-border .text-xs {
@@ -508,7 +508,7 @@ html {
     word-break: break-word;
     hyphens: auto;
   }
-  
+
   /* Garantir que títulos com gradiente também se ajustem */
   h2 span.heading-gradient,
   h2 span.bg-gradient-to-r {
@@ -516,14 +516,14 @@ html {
     max-width: 100%;
     overflow-wrap: break-word;
   }
-  
+
   /* Ajustar cards para evitar overflow */
   .futuristic-border {
     max-width: calc(100vw - 2rem) !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  
+
   /* Ajustar padding lateral geral */
   .container-responsive {
     padding-left: 1rem !important;

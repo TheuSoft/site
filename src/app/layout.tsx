@@ -52,6 +52,28 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code",
   },
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "32x32",
+        type: "image/x-icon",
+      },
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      {
+        url: "/favicon.svg",
+        sizes: "180x180",
+        type: "image/svg+xml",
+      },
+    ],
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
