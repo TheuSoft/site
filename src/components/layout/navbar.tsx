@@ -9,12 +9,7 @@ import { MotionNav, slideDown } from "@/providers/motion-provider";
 import { Bars3Icon, XMarkIcon } from "@/components/icons";
 import { Logo } from "@/components/ui/logo";
 
-const navigation = [
-  { name: "Home", href: "/", id: "home" },
-  { name: "Sobre", href: "/sobre", id: "sobre" },
-  { name: "Projetos", href: "/projetos", id: "projetos" },
-  { name: "Contato", href: "/contato", id: "contato" },
-];
+const navigation = [{ name: "Home", href: "/", id: "home" }];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,9 +32,9 @@ export function Navbar() {
     >
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/5 via-blue-400/5 to-purple-400/5" />
       <div className="container-responsive relative">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Logo />
+          <Logo size="md" variant="navbar" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

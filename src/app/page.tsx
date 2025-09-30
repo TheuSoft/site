@@ -188,24 +188,12 @@ export default function Home() {
               <Button
                 size="lg"
                 className="btn-futuristic text-white font-mono px-8 py-4 rounded-none border border-emerald-400/20 hover-lift"
+                disabled
               >
-                <Link href="/projetos" className="flex items-center gap-3">
-                  MEUS PROJETOS
-                  <ArrowRightIcon className="h-5 w-5" />
-                </Link>
-              </Button>
-            </Magnetic>
-
-            <Magnetic strength={0.2}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 font-mono px-8 py-4 rounded-none hover-lift"
-              >
-                <Link href="/contato" className="flex items-center gap-3">
-                  CONTATO
+                <div className="flex items-center gap-3">
+                  EM DESENVOLVIMENTO
                   <CodeBracketIcon className="h-5 w-5" />
-                </Link>
+                </div>
               </Button>
             </Magnetic>
           </MotionDiv>
@@ -461,11 +449,12 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white font-mono"
+              disabled
             >
-              <Link href="/projetos" className="flex items-center gap-2">
-                VIEW_ALL_PROJECTS
+              <div className="flex items-center gap-2">
+                EM_BREVE
                 <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+              </div>
             </Button>
           </div>
         </div>
@@ -579,12 +568,13 @@ export default function Home() {
           <Magnetic strength={0.3}>
             <Button
               size="lg"
-              className="btn-futuristic text-white font-mono text-lg px-12 py-6 rounded-none border border-emerald-400/20 hover:border-emerald-400/40 hover-lift transition-all duration-300"
+              className="btn-futuristic text-white font-mono text-lg px-12 py-6 rounded-none border border-emerald-400/20 opacity-50 cursor-not-allowed"
+              disabled
             >
-              <Link href="/contato" className="flex items-center gap-3">
-                INICIAR_PROJETO
+              <div className="flex items-center gap-3">
+                EM_CONSTRUÇÃO
                 <ArrowRightIcon className="h-5 w-5" />
-              </Link>
+              </div>
             </Button>
           </Magnetic>
         </div>
