@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { cn } from '@/helpers/cn';
-import { MotionSection } from '@/providers/motion-provider';
+import { cn } from "@/helpers/cn";
+import { MotionSection } from "@/providers/motion-provider";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -21,29 +21,29 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
 
-export function Section({ 
-  children, 
-  className, 
-  id, 
+export function Section({
+  children,
+  className,
+  id,
   containerClassName,
-  animate = true 
+  animate = true,
 }: SectionProps) {
   if (animate) {
     return (
       <MotionSection
         id={id}
-        className={cn('section-padding py-16 sm:py-20 lg:py-24', className)}
+        className={cn("section-padding py-16 sm:py-20 lg:py-24", className)}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: '-100px' }}
+        viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
       >
-        <div className={cn('container-responsive', containerClassName)}>
+        <div className={cn("container-responsive", containerClassName)}>
           {children}
         </div>
       </MotionSection>
@@ -53,9 +53,9 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn('section-padding py-16 sm:py-20 lg:py-24', className)}
+      className={cn("section-padding py-16 sm:py-20 lg:py-24", className)}
     >
-      <div className={cn('container-responsive', containerClassName)}>
+      <div className={cn("container-responsive", containerClassName)}>
         {children}
       </div>
     </section>

@@ -1,19 +1,22 @@
-'use client';
+"use client";
 
-import { MotionDiv } from '@/providers/motion-provider';
+import { MotionDiv } from "@/providers/motion-provider";
 
 interface FuturisticLineProps {
   className?: string;
   animate?: boolean;
 }
 
-export function FuturisticLine({ className = '', animate = true }: FuturisticLineProps) {
+export function FuturisticLine({
+  className = "",
+  animate = true,
+}: FuturisticLineProps) {
   return (
     <MotionDiv
       className={`relative h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent ${className}`}
       initial={animate ? { scaleX: 0, opacity: 0 } : {}}
       whileInView={animate ? { scaleX: 1, opacity: 1 } : {}}
-      transition={{ duration: 1.5, ease: 'easeOut' }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
       viewport={{ once: true }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400 to-transparent blur-sm opacity-50" />

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { m, useScroll } from 'framer-motion';
+import { m, useScroll } from "framer-motion";
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();

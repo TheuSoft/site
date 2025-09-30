@@ -40,7 +40,7 @@ export {
   InformationCircleIcon,
   CheckCircleIcon,
   XCircleIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 export {
   HomeIcon as HomeIconSolid,
@@ -53,4 +53,4 @@ export {
   ExclamationCircleIcon as ExclamationCircleIconSolid,
   InformationCircleIcon as InformationCircleIconSolid,
   XCircleIcon as XCircleIconSolid,
-} from '@heroicons/react/24/solid';
+} from "@heroicons/react/24/solid";

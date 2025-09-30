@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 interface MotionProviderProps {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ export const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -38,7 +38,7 @@ export const fadeIn = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -53,7 +53,7 @@ export const slideDown = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -68,7 +68,7 @@ export const slideInLeft = {
     x: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -83,7 +83,7 @@ export const slideInRight = {
     x: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -98,7 +98,7 @@ export const scaleIn = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -115,7 +115,7 @@ export const rotateIn = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };
@@ -131,7 +131,7 @@ export const bounceIn = {
     y: 0,
     scale: 1,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       damping: 20,
       stiffness: 300,
     },
@@ -158,7 +158,7 @@ export const staggerItem = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeOut' as const,
+      ease: "easeOut" as const,
     },
   },
 };

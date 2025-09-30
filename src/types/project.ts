@@ -8,8 +8,8 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   featured: boolean;
-  category: 'web' | 'mobile' | 'desktop' | 'api';
-  status: 'completed' | 'in-progress' | 'planned';
+  category: "web" | "mobile" | "desktop" | "api";
+  status: "completed" | "in-progress" | "planned";
   createdAt: string;
   updatedAt: string;
 }

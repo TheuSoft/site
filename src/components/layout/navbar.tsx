@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/helpers/cn';
-import { useActiveSection } from '@/hooks/useActiveSection';
-import { MotionNav, slideDown } from '@/providers/motion-provider';
-import { Bars3Icon, XMarkIcon } from '@/components/icons';
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/helpers/cn";
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { MotionNav, slideDown } from "@/providers/motion-provider";
+import { Bars3Icon, XMarkIcon } from "@/components/icons";
+import { Logo } from "@/components/ui/logo";
 
 const navigation = [
-  { name: 'Home', href: '/', id: 'home' },
-  { name: 'Sobre', href: '/sobre', id: 'sobre' },
-  { name: 'Projetos', href: '/projetos', id: 'projetos' },
-  { name: 'Contato', href: '/contato', id: 'contato' },
+  { name: "Home", href: "/", id: "home" },
+  { name: "Sobre", href: "/sobre", id: "sobre" },
+  { name: "Projetos", href: "/projetos", id: "projetos" },
+  { name: "Contato", href: "/contato", id: "contato" },
 ];
 
 export function Navbar() {
@@ -21,7 +22,7 @@ export function Navbar() {
   const activeSection = useActiveSection();
 
   const isActive = (href: string, id: string) => {
-    if (pathname === '/') {
+    if (pathname === "/") {
       return activeSection === id;
     }
     return pathname === href;
@@ -38,13 +39,7 @@ export function Navbar() {
       <div className="container-responsive relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className="text-xl font-bold heading-gradient text-glow relative"
-          >
-            <span className="relative z-10">DEV.PORTFOLIO</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 blur-lg rounded-lg -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
@@ -53,10 +48,10 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  'text-sm font-medium transition-all duration-300 hover:text-emerald-400 relative group px-3 py-2 rounded-lg',
+                  "text-sm font-medium transition-all duration-300 hover:text-emerald-400 relative group px-3 py-2 rounded-lg",
                   isActive(item.href, item.id)
-                    ? 'text-emerald-400 bg-emerald-400/10 shadow-[0_0_20px_rgba(16,185,129,0.3)]'
-                    : 'text-gray-300 hover:bg-white/5'
+                    ? "text-emerald-400 bg-emerald-400/10 shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                    : "text-gray-300 hover:bg-white/5"
                 )}
               >
                 {item.name}
@@ -88,10 +83,10 @@ export function Navbar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    'text-base font-medium px-3 py-2 rounded-md transition-colors duration-200',
+                    "text-base font-medium px-3 py-2 rounded-md transition-colors duration-200",
                     isActive(item.href, item.id)
-                      ? 'text-emerald-400 bg-dark-800'
-                      : 'text-gray-300 hover:text-emerald-400 hover:bg-dark-800'
+                      ? "text-emerald-400 bg-dark-800"
+                      : "text-gray-300 hover:text-emerald-400 hover:bg-dark-800"
                   )}
                   onClick={() => setIsOpen(false)}
                 >

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function useActiveSection() {
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,12 +16,12 @@ export function useActiveSection() {
       },
       {
         threshold: 0.3,
-        rootMargin: '-50px 0px -50px 0px',
+        rootMargin: "-50px 0px -50px 0px",
       }
     );
 
     // Observe all sections with IDs
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll("section[id]");
     sections.forEach((section) => observer.observe(section));
 
     return () => {

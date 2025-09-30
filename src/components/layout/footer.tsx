@@ -2,12 +2,8 @@
 
 import Link from "next/link";
 import { MotionFooter, fadeIn } from "@/providers/motion-provider";
-import {
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon,
-  HeartIconSolid,
-} from "@/components/icons";
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from "@/components/icons";
+import { Logo } from "@/components/ui/logo";
 
 const socialLinks = [
   {
@@ -49,7 +45,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold heading-gradient">Portfolio</h3>
+            <Logo size="sm" />
             <p className="text-gray-400 text-sm">
               Desenvolvedor Full Stack apaixonado por criar experiências
               digitais incríveis e soluções inovadoras.
@@ -135,11 +131,7 @@ export function Footer() {
             <p className="text-gray-400 text-sm">
               © {currentYear} Portfolio. Todos os direitos reservados.
             </p>
-            <div className="flex items-center space-x-2 text-gray-400 text-sm">
-              <span>Feito com</span>
-              <HeartIconSolid className="h-4 w-4 text-red-500" />
-              <span>usando Next.js e Tailwind CSS</span>
-            </div>
+            <div className="flex items-center space-x-2 text-gray-400 text-sm"></div>
           </div>
         </div>
       </div>

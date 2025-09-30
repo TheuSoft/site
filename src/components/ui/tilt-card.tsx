@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
+import { useRef } from "react";
 
 interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export function TiltCard({ children, className = '' }: TiltCardProps) {
+export function TiltCard({ children, className = "" }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -29,7 +29,8 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
 
   const handleMouseLeave = () => {
     if (!ref.current) return;
-    ref.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    ref.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
   };
 
   return (
@@ -38,7 +39,7 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
       className={`transition-transform duration-200 ease-out ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transformStyle: 'preserve-3d' }}
+      style={{ transformStyle: "preserve-3d" }}
     >
       {children}
     </div>

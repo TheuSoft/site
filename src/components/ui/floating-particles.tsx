@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface Particle {
   id: number;
@@ -21,7 +21,7 @@ export function FloatingParticles() {
       animationDelay: `${Math.random() * 20}s`,
       animationDuration: `${15 + Math.random() * 10}s`,
     }));
-    
+
     setParticles(generatedParticles);
     setIsMounted(true);
   }, []);

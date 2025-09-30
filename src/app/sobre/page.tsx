@@ -1,57 +1,79 @@
-'use client';
+"use client";
 
-import { Section } from '@/components/ui/section';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { MotionDiv, staggerContainer, fadeInUp } from '@/providers/motion-provider';
+import { Section } from "@/components/ui/section";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  MotionDiv,
+  staggerContainer,
+  fadeInUp,
+} from "@/providers/motion-provider";
 import {
   AcademicCapIcon,
   BuildingOffice2Icon,
   CalendarDaysIcon,
-} from '@/components/icons';
+} from "@/components/icons";
 
 const skills = [
-  'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
-  'Python', 'Django', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS',
-  'Git', 'Tailwind CSS', 'Framer Motion', 'Jest', 'Cypress', 'GraphQL'
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Express",
+  "Python",
+  "Django",
+  "PostgreSQL",
+  "MongoDB",
+  "Docker",
+  "AWS",
+  "Git",
+  "Tailwind CSS",
+  "Framer Motion",
+  "Jest",
+  "Cypress",
+  "GraphQL",
 ];
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Solutions Inc.',
-    period: '2022 - Presente',
-    description: 'Desenvolvimento de aplicações web complexas usando React, Next.js e Node.js. Liderança técnica de equipe de 5 desenvolvedores.',
+    title: "Senior Full Stack Developer",
+    company: "Tech Solutions Inc.",
+    period: "2022 - Presente",
+    description:
+      "Desenvolvimento de aplicações web complexas usando React, Next.js e Node.js. Liderança técnica de equipe de 5 desenvolvedores.",
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Digital Agency Co.',
-    period: '2020 - 2022',
-    description: 'Criação de sites e aplicações web para clientes diversos. Especialização em React, Vue.js e APIs REST.',
+    title: "Full Stack Developer",
+    company: "Digital Agency Co.",
+    period: "2020 - 2022",
+    description:
+      "Criação de sites e aplicações web para clientes diversos. Especialização em React, Vue.js e APIs REST.",
   },
   {
-    title: 'Frontend Developer',
-    company: 'StartupXYZ',
-    period: '2019 - 2020',
-    description: 'Desenvolvimento frontend com foco em experiência do usuário. Trabalho com React, Redux e integração de APIs.',
+    title: "Frontend Developer",
+    company: "StartupXYZ",
+    period: "2019 - 2020",
+    description:
+      "Desenvolvimento frontend com foco em experiência do usuário. Trabalho com React, Redux e integração de APIs.",
   },
 ];
 
 const education = [
   {
-    degree: 'Bacharelado em Ciência da Computação',
-    institution: 'Universidade de São Paulo',
-    period: '2015 - 2019',
+    degree: "Bacharelado em Ciência da Computação",
+    institution: "Universidade de São Paulo",
+    period: "2015 - 2019",
   },
   {
-    degree: 'Curso de React Avançado',
-    institution: 'Rocketseat',
-    period: '2020',
+    degree: "Curso de React Avançado",
+    institution: "Rocketseat",
+    period: "2020",
   },
   {
-    degree: 'AWS Solutions Architect',
-    institution: 'Amazon Web Services',
-    period: '2021',
+    degree: "AWS Solutions Architect",
+    institution: "Amazon Web Services",
+    period: "2021",
   },
 ];
 
@@ -65,8 +87,8 @@ export default function SobrePage() {
             <span className="heading-gradient">Sobre Mim</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Desenvolvedor apaixonado por tecnologia, sempre em busca de novos desafios 
-            e oportunidades para crescer profissionalmente.
+            Desenvolvedor apaixonado por tecnologia, sempre em busca de novos
+            desafios e oportunidades para crescer profissionalmente.
           </p>
         </MotionDiv>
       </Section>
@@ -75,27 +97,30 @@ export default function SobrePage() {
       <Section id="bio">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <MotionDiv variants={fadeInUp}>
-            <h2 className="text-3xl font-bold mb-6 heading-gradient">Minha História</h2>
+            <h2 className="text-3xl font-bold mb-6 heading-gradient">
+              Minha História
+            </h2>
             <div className="space-y-4 text-gray-300">
               <p>
-                Comecei minha jornada na programação em 2015, durante a faculdade de 
-                Ciência da Computação. Desde então, venho me especializando em 
-                desenvolvimento web full stack, com foco especial em tecnologias 
-                JavaScript e Python.
+                Comecei minha jornada na programação em 2015, durante a
+                faculdade de Ciência da Computação. Desde então, venho me
+                especializando em desenvolvimento web full stack, com foco
+                especial em tecnologias JavaScript e Python.
               </p>
               <p>
-                Ao longo dos anos, trabalhei em diversos projetos, desde startups 
-                até grandes corporações, sempre buscando entregar soluções de alta 
-                qualidade e com foco na experiência do usuário.
+                Ao longo dos anos, trabalhei em diversos projetos, desde
+                startups até grandes corporações, sempre buscando entregar
+                soluções de alta qualidade e com foco na experiência do usuário.
               </p>
               <p>
-                Atualmente, trabalho como Senior Full Stack Developer, liderando 
-                projetos e mentorando desenvolvedores juniores. Minha paixão é 
-                transformar ideias complexas em soluções digitais elegantes e eficientes.
+                Atualmente, trabalho como Senior Full Stack Developer, liderando
+                projetos e mentorando desenvolvedores juniores. Minha paixão é
+                transformar ideias complexas em soluções digitais elegantes e
+                eficientes.
               </p>
             </div>
           </MotionDiv>
-          
+
           <MotionDiv variants={fadeInUp}>
             <Card className="bg-dark-800 border-dark-700">
               <CardContent className="p-8">
@@ -156,7 +181,7 @@ export default function SobrePage() {
             Linguagens e tecnologias que domino
           </p>
         </MotionDiv>
-        
+
         <MotionDiv
           variants={staggerContainer}
           initial="hidden"
@@ -166,8 +191,8 @@ export default function SobrePage() {
         >
           {skills.map((skill) => (
             <MotionDiv key={skill} variants={fadeInUp}>
-              <Badge 
-                variant="secondary" 
+              <Badge
+                variant="secondary"
                 className="bg-dark-800 border-dark-700 text-white hover:border-emerald-600/50 transition-colors px-4 py-2 text-sm"
               >
                 {skill}
@@ -184,7 +209,7 @@ export default function SobrePage() {
             Experiência Profissional
           </h2>
         </MotionDiv>
-        
+
         <MotionDiv
           variants={staggerContainer}
           initial="hidden"
@@ -198,7 +223,9 @@ export default function SobrePage() {
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                      <h3 className="text-xl font-semibold text-white">
+                        {exp.title}
+                      </h3>
                       <div className="flex items-center gap-2 text-emerald-400">
                         <BuildingOffice2Icon className="h-4 w-4" />
                         <span>{exp.company}</span>
@@ -220,11 +247,9 @@ export default function SobrePage() {
       {/* Education Section */}
       <Section id="education">
         <MotionDiv variants={fadeInUp} className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 heading-gradient">
-            Formação
-          </h2>
+          <h2 className="text-3xl font-bold mb-4 heading-gradient">Formação</h2>
         </MotionDiv>
-        
+
         <MotionDiv
           variants={staggerContainer}
           initial="hidden"
@@ -239,8 +264,12 @@ export default function SobrePage() {
                   <div className="flex items-start gap-3">
                     <AcademicCapIcon className="h-6 w-6 text-emerald-400 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-white mb-2">{edu.degree}</h3>
-                      <p className="text-gray-300 text-sm mb-2">{edu.institution}</p>
+                      <h3 className="font-semibold text-white mb-2">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-gray-300 text-sm mb-2">
+                        {edu.institution}
+                      </p>
                       <p className="text-gray-400 text-xs">{edu.period}</p>
                     </div>
                   </div>
