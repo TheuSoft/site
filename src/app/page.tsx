@@ -526,7 +526,7 @@ export default function Home() {
                   transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
                   className="text-3xl font-bold text-emerald-400 font-mono mb-2"
                 >
-                  24h
+                  12h
                 </MotionDiv>
                 <div className="text-gray-400 text-sm">Resposta Garantida</div>
               </MotionDiv>

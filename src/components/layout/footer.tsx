@@ -98,9 +98,11 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-dark-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Matheus Carvalho Portfolio.
-            </p>
+            <div className="w-full flex justify-center">
+              <p className="text-gray-400 text-sm text-center">
+                © {currentYear} Matheus Carvalho Portfolio.
+              </p>
+            </div>
             <div className="flex items-center space-x-2 text-gray-400 text-sm"></div>
           </div>
         </div>

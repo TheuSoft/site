@@ -8,7 +8,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mcraft-ti.vercel.app"),
-  title: "Portfolio - Analista de Sistemas e Suporte Técnico",
+  title: "MCraft - Analista de Sistemas e Suporte Técnico",
   description:
     "Portfolio profissional de analista de sistemas e suporte técnico especializado em soluções de TI, atendimento ao cliente, manutenção e infraestrutura.",
   keywords: [
