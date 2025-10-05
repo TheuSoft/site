@@ -34,7 +34,7 @@ export function Navbar() {
       <div className="container-responsive relative">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Logo size="md" variant="navbar" />
+          <Logo size="lg" variant="navbar" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">

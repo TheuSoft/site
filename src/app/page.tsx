@@ -11,6 +11,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Logo } from "@/components/ui/logo";
 import {
   MotionDiv,
   staggerContainer,
@@ -55,9 +56,24 @@ export default function Home() {
           style={{ y: yParallaxReverse }}
         />
 
-        <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto">
-          <div className="space-y-6">
+        <div className="relative z-10 text-center space-y-10 max-w-4xl mx-auto">
+          <div className="space-y-8">
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent mx-auto animate-pulse" />
+
+            {/* Logo Principal */}
+            <MotionDiv
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.8 }}
+              className="py-4"
+            >
+              <Logo
+                size="hero"
+                variant="hero"
+                responsive={true}
+                className="mx-auto"
+              />
+            </MotionDiv>
 
             <MotionDiv
               variants={bounceIn}
@@ -111,7 +127,7 @@ export default function Home() {
                 <div className="text-2xl sm:text-3xl text-gray-300 font-light">
                   Eu sou{" "}
                   <span className="text-emerald-400 font-semibold">
-                    Matheus
+                    Matheus Carvalho Marques
                   </span>
                 </div>
               </MotionDiv>
