@@ -23,20 +23,22 @@ import {
   rotateIn,
 } from "@/providers/motion-provider";
 import { getFeaturedProjects } from "@/data/projects";
+import { courses } from "@/data/courses";
 import {
   ArrowRightIcon,
   CodeBracketIcon,
   EyeIcon,
   ArrowTopRightOnSquareIcon,
+  AcademicCapIcon,
 } from "@/components/icons";
 import { FloatingParticles } from "@/components/ui/floating-particles";
 import { useScrollEffects } from "@/hooks/use-scroll-effects";
 import { Magnetic } from "@/components/ui/magnetic";
 import { Typewriter } from "@/components/ui/typewriter";
-import { TiltCard } from "@/components/ui/tilt-card";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const featuredCourses = courses.slice(0, 3); // Pega os primeiros 3cursos
   const { yParallax, yParallaxReverse, opacityFade } = useScrollEffects();
 
   return (
@@ -141,8 +143,6 @@ export default function Home() {
                     texts={[
                       "ANALISTA_DE_TI",
                       "DESENVOLVEDOR_INICIANTE",
-                      "APRENDIZ_EM_REACT",
-                      "ENTUSIASTA_NODE.JS",
                       "BUSCANDO_EXPERIÊNCIA",
                       "CURIOSO_POR_TECNOLOGIA",
                     ]}
@@ -177,7 +177,7 @@ export default function Home() {
               "IA",
               "MANUTENÇÃO TI",
               "SUPORTE TÉCNICO",
-              "INTERMEDIÁRIO PACOTE OFFICE",
+              "PACOTE OFFICE",
             ].map((tech, index) => (
               <div
                 key={tech}
@@ -331,8 +331,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Featured Projects Section */}
-      <Section id="featured-projects" className="relative">
+      {/* Portfolio Section */}
+      <Section id="portfolio" className="relative">
         <div className="absolute inset-0 tech-pattern opacity-20" />
         <div className="relative z-10">
           <div className="text-center mb-16">
@@ -343,31 +343,47 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-gray-400 font-mono text-sm">
-              {"// Projetos que definem o futuro"}
+              {"// Projetos e conhecimentos que definem o futuro"}
             </p>
-            <p className="text-xl text-gray-300 mt-4 max-w-2xl mx-auto">
-              Soluções digitais inovadoras construídas com as mais modernas
-              tecnologias
+            <p className="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">
+              Combinando desenvolvimento de soluções inovadoras com aprendizado
+              contínuo em tecnologias modernas
             </p>
           </div>
 
-          <MotionDiv
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {featuredProjects.map((project, index) => (
-              <MotionDiv
-                key={project.id}
-                variants={rotateIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <TiltCard>
+          {/* Projects Subsection */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-12 h-px bg-gradient-to-r from-transparent via-emerald-400 to-emerald-400" />
+                <h3 className="text-2xl sm:text-3xl font-bold font-mono">
+                  <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+                    PROJETOS
+                  </span>
+                </h3>
+                <div className="w-12 h-px bg-gradient-to-r from-emerald-400 to-transparent" />
+              </div>
+              <p className="text-gray-400 text-sm font-mono">
+                {"// Soluções digitais inovadoras"}
+              </p>
+            </div>
+
+            <MotionDiv
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {featuredProjects.map((project, index) => (
+                <MotionDiv
+                  key={project.id}
+                  variants={rotateIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.2 }}
+                >
                   <Card className="futuristic-border bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm hover:from-emerald-900/20 hover:to-blue-900/20 transition-all duration-500 group overflow-hidden cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <CardHeader className="relative z-10">
@@ -455,22 +471,138 @@ export default function Home() {
                       </div>
                     </CardContent>
                   </Card>
-                </TiltCard>
-              </MotionDiv>
-            ))}
-          </MotionDiv>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
 
-          <div className="text-center mt-16">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white font-mono"
-              disabled
-            >
-              <div className="flex items-center gap-2">
-                EM_BREVE
-                <ArrowRightIcon className="h-4 w-4" />
+            <div className="text-center">
+              <Button
+                asChild
+                size="sm"
+                className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white font-mono"
+              >
+                <Link href="/projetos" className="flex items-center gap-2">
+                  VER_TODOS_PROJETOS
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Courses Subsection */}
+          <div>
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-12 h-px bg-gradient-to-r from-transparent via-purple-400 to-purple-400" />
+                <h3 className="text-2xl sm:text-3xl font-bold font-mono">
+                  <span className="bg-gradient-to-r from-purple-400 to-emerald-400 bg-clip-text text-transparent">
+                    APRENDIZADO
+                  </span>
+                </h3>
+                <div className="w-12 h-px bg-gradient-to-r from-purple-400 to-transparent" />
               </div>
-            </Button>
+              <p className="text-gray-400 text-sm font-mono">
+                {"// Conhecimento em constante evolução"}
+              </p>
+            </div>
+
+            <MotionDiv
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto mb-8"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {featuredCourses.map((course, index) => (
+                <MotionDiv
+                  key={course.id}
+                  variants={rotateIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ delay: index * 0.2 }}
+                >
+                  <Card className="futuristic-border bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm hover:from-purple-900/20 hover:to-emerald-900/20 transition-all duration-500 group overflow-hidden cursor-pointer">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <CardHeader className="relative z-10">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-3 h-3 rounded-full bg-purple-400 animate-pulse" />
+                          <CardTitle className="text-white font-mono text-lg">
+                            {course.title}
+                          </CardTitle>
+                        </div>
+                        <span className="text-xs text-gray-400 font-mono">
+                          {course.duration}
+                        </span>
+                      </div>
+                      <CardDescription className="text-gray-300 leading-relaxed">
+                        {course.description}
+                      </CardDescription>
+                      <div className="text-sm text-gray-400 mt-2 font-mono">
+                        <AcademicCapIcon className="h-4 w-4 inline mr-2" />
+                        {course.instructor}
+                      </div>
+                    </CardHeader>
+                    <CardContent className="relative z-10">
+                      <div className="space-y-6">
+                        <div className="flex flex-wrap gap-2">
+                          {course.technologies.slice(0, 3).map((tech) => (
+                            <Badge
+                              key={tech}
+                              variant="outline"
+                              className="text-xs font-mono border-gray-600 hover:border-purple-400/50 transition-colors"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                          {course.technologies.length > 3 && (
+                            <Badge
+                              variant="outline"
+                              className="text-xs font-mono border-gray-600"
+                            >
+                              +{course.technologies.length - 3}
+                            </Badge>
+                          )}
+                        </div>
+                        <div className="flex gap-3">
+                          {course.certificateUrl && (
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="w-full border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 font-mono"
+                            >
+                              <Link
+                                href={course.certificateUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2"
+                              >
+                                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                                CERTIFICADO
+                              </Link>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </MotionDiv>
+              ))}
+            </MotionDiv>
+
+            <div className="text-center">
+              <Button
+                asChild
+                size="sm"
+                className="bg-gradient-to-r from-purple-600 to-emerald-600 hover:from-purple-700 hover:to-emerald-700 text-white font-mono"
+              >
+                <Link href="/cursos" className="flex items-center gap-2">
+                  VER_TODOS_CURSOS
+                  <ArrowRightIcon className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </Section>
