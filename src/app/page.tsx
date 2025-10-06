@@ -37,8 +37,7 @@ import { TiltCard } from "@/components/ui/tilt-card";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
-  const { yParallax, yParallaxReverse, scaleParallax, opacityFade } =
-    useScrollEffects();
+  const { yParallax, yParallaxReverse, opacityFade } = useScrollEffects();
 
   return (
     <main className="relative pt-16 overflow-hidden">
@@ -169,7 +168,7 @@ export default function Home() {
           {/* Tech Stack Indicators */}
           <MotionDiv
             variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-4 py-8"
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 py-6 sm:py-8 max-w-4xl mx-auto"
           >
             {[
               "REACT",
@@ -182,7 +181,7 @@ export default function Home() {
             ].map((tech, index) => (
               <div
                 key={tech}
-                className={`px-4 py-2 rounded-sm border font-mono text-sm ${
+                className={`px-3 py-2 sm:px-4 rounded-sm border font-mono text-xs sm:text-sm ${
                   index % 3 === 0
                     ? "border-emerald-400/30 text-emerald-400"
                     : index % 3 === 1
@@ -230,27 +229,27 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <MotionDiv
               variants={slideInLeft}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="space-y-8"
+              className="space-y-6 lg:space-y-8"
             >
               <div className="space-y-6">
                 <MotionDiv
-                  initial={{ opacity: 0, x: -100 }}
+                  initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                   whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(16, 185, 129, 0.2)",
+                    scale: 1.01,
+                    boxShadow: "0 15px 30px rgba(16, 185, 129, 0.15)",
                   }}
-                  className="futuristic-border p-6 cursor-pointer"
+                  className="futuristic-border p-4 sm:p-6 cursor-pointer"
                 >
-                  <h3 className="text-2xl font-bold text-emerald-400 mb-4 font-mono">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-emerald-400 mb-3 sm:mb-4 font-mono break-words">
                     ANALISTA_SISTEMAS_SUPORTE
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -262,17 +261,17 @@ export default function Home() {
                 </MotionDiv>
 
                 <MotionDiv
-                  initial={{ opacity: 0, x: -100 }}
+                  initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.8 }}
                   whileHover={{
-                    scale: 1.02,
-                    boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)",
+                    scale: 1.01,
+                    boxShadow: "0 15px 30px rgba(59, 130, 246, 0.15)",
                   }}
-                  className="futuristic-border p-6 cursor-pointer"
+                  className="futuristic-border p-4 sm:p-6 cursor-pointer"
                 >
-                  <h3 className="text-2xl font-bold text-blue-400 mb-4 font-mono">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-400 mb-3 sm:mb-4 font-mono break-words">
                     TRABALHO_EM_EQUIPE_TI
                   </h3>
                   <p className="text-gray-300 leading-relaxed">
@@ -293,22 +292,22 @@ export default function Home() {
               className="relative"
             >
               <MotionDiv
-                className="futuristic-border p-8 text-center"
+                className="futuristic-border p-6 sm:p-8 text-center"
                 whileHover={{
-                  scale: 1.05,
-                  rotateY: 5,
-                  boxShadow: "0 25px 50px rgba(16, 185, 129, 0.3)",
+                  scale: 1.02,
+                  rotateY: 2,
+                  boxShadow: "0 20px 40px rgba(16, 185, 129, 0.2)",
                 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <MotionDiv
-                  className="w-32 h-32 mx-auto mb-6 relative"
+                  className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 relative"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 2 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full opacity-20 animate-pulse" />
                   <div className="absolute inset-2 bg-gray-900 rounded-full flex items-center justify-center">
-                    <CodeBracketIcon className="h-16 w-16 text-emerald-400" />
+                    <CodeBracketIcon className="h-12 w-12 sm:h-16 sm:w-16 text-emerald-400" />
                   </div>
                 </MotionDiv>
 
@@ -353,7 +352,7 @@ export default function Home() {
           </div>
 
           <MotionDiv
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -479,10 +478,6 @@ export default function Home() {
       {/* CTA Section */}
       <Section className="relative overflow-hidden">
         <MotionDiv
-          className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 via-blue-600/10 to-purple-600/10"
-          style={{ y: yParallax, scale: scaleParallax }}
-        />
-        <MotionDiv
           className="absolute inset-0 tech-pattern opacity-40"
           style={{ y: yParallaxReverse }}
         />
@@ -506,17 +501,17 @@ export default function Home() {
               digitais.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center max-w-4xl mx-auto">
               <MotionDiv
-                className="futuristic-border p-6"
-                initial={{ opacity: 0, y: 50, rotateX: -30 }}
+                className="futuristic-border p-4 sm:p-6"
+                initial={{ opacity: 0, y: 30, rotateX: -15 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 whileHover={{
-                  scale: 1.1,
-                  rotateY: 10,
-                  boxShadow: "0 20px 40px rgba(16, 185, 129, 0.3)",
+                  scale: 1.05,
+                  rotateY: 5,
+                  boxShadow: "0 15px 30px rgba(16, 185, 129, 0.2)",
                 }}
               >
                 <MotionDiv
@@ -532,15 +527,15 @@ export default function Home() {
               </MotionDiv>
 
               <MotionDiv
-                className="futuristic-border p-6"
-                initial={{ opacity: 0, y: 50, rotateX: -30 }}
+                className="futuristic-border p-4 sm:p-6"
+                initial={{ opacity: 0, y: 30, rotateX: -15 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 whileHover={{
-                  scale: 1.1,
-                  rotateY: 10,
-                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
+                  scale: 1.05,
+                  rotateY: 5,
+                  boxShadow: "0 15px 30px rgba(59, 130, 246, 0.2)",
                 }}
               >
                 <MotionDiv
@@ -556,15 +551,15 @@ export default function Home() {
               </MotionDiv>
 
               <MotionDiv
-                className="futuristic-border p-6"
-                initial={{ opacity: 0, y: 50, rotateX: -30 }}
+                className="futuristic-border p-4 sm:p-6"
+                initial={{ opacity: 0, y: 30, rotateX: -15 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.8 }}
                 whileHover={{
-                  scale: 1.1,
-                  rotateY: 10,
-                  boxShadow: "0 20px 40px rgba(147, 51, 234, 0.3)",
+                  scale: 1.05,
+                  rotateY: 5,
+                  boxShadow: "0 15px 30px rgba(147, 51, 234, 0.2)",
                 }}
               >
                 <MotionDiv

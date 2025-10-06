@@ -4,17 +4,18 @@ import Link from "next/link";
 import { MotionFooter, fadeIn } from "@/providers/motion-provider";
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from "@/components/icons";
 import { Logo } from "@/components/ui/logo";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "GitHub",
     href: "https://github.com/TheuSoft",
-    icon: "📘",
+    icon: <FaGithub />,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: "💼",
+    href: "https://www.linkedin.com/in/matheus-carvalho-450681101/",
+    icon: <FaLinkedin />,
   },
 ];
 
@@ -85,7 +86,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <PhoneIcon className="h-5 w-5 text-emerald-400" />
-                <span>+55 (34) 9 92424-4044</span>
+                <span>+55 (34) 9 9242-4044</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <MapPinIcon className="h-5 w-5 text-emerald-400" />
