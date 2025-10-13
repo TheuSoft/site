@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
+
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,6 +26,7 @@ import {
 } from "@/providers/motion-provider";
 import { getFeaturedProjects } from "@/data/projects";
 import { courses } from "@/data/courses";
+import { Course } from "@/types/course";
 import {
   ArrowRightIcon,
   CodeBracketIcon,
@@ -32,9 +35,143 @@ import {
   AcademicCapIcon,
 } from "@/components/icons";
 import { FloatingParticles } from "@/components/ui/floating-particles";
+import { CertificateModal } from "@/components/ui/certificate-modal";
 import { useScrollEffects } from "@/hooks/use-scroll-effects";
 import { Magnetic } from "@/components/ui/magnetic";
 import { Typewriter } from "@/components/ui/typewriter";
+
+function CourseCardWithModal({
+  course,
+  index,
+}: {
+  course: Course;
+  index: number;
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewCertificate = () => {
+    if (course.certificateImage) {
+      setIsModalOpen(true);
+    }
+  };
+
+  return (
+    <>
+      <MotionDiv
+        key={course.id}
+        variants={rotateIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: index * 0.2 }}
+      >
+        <Card className="futuristic-border bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm hover:from-purple-900/20 hover:to-emerald-900/20 transition-all duration-500 group overflow-hidden cursor-pointer flex flex-col h-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <CardHeader className="relative z-10 flex-grow">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-purple-400 animate-pulse" />
+                <CardTitle className="text-white font-mono text-lg">
+                  {course.title}
+                </CardTitle>
+              </div>
+              <div className="text-right">
+                <span className="text-xs text-gray-400 font-mono block">
+                  {course.duration}
+                </span>
+                {course.completedAt && (
+                  <span className="text-xs text-emerald-400 font-mono block mt-1">
+                    {course.completedAt}
+                  </span>
+                )}
+              </div>
+            </div>
+            <CardDescription className="text-gray-300 leading-relaxed">
+              {course.description}
+            </CardDescription>
+            <div className="text-sm text-gray-400 mt-2 font-mono">
+              <AcademicCapIcon className="h-4 w-4 inline mr-2" />
+              {course.instructor}
+            </div>
+          </CardHeader>
+          <CardContent className="relative z-10 mt-auto">
+            <div className="space-y-6">
+              <div className="flex flex-wrap gap-2">
+                {course.technologies.slice(0, 3).map((tech: string) => (
+                  <Badge
+                    key={tech}
+                    variant="outline"
+                    className="text-xs font-mono border-gray-600 hover:border-purple-400/50 transition-colors"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+                {course.technologies.length > 3 && (
+                  <Badge
+                    variant="outline"
+                    className="text-xs font-mono border-gray-600"
+                  >
+                    +{course.technologies.length - 3}
+                  </Badge>
+                )}
+              </div>
+              <div className="flex gap-3">
+                {(course.certificateImage || course.certificateUrl) && (
+                  <>
+                    {course.certificateImage ? (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 font-mono"
+                        onClick={handleViewCertificate}
+                      >
+                        <div className="flex items-center gap-2">
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                          CERTIFICADO
+                        </div>
+                      </Button>
+                    ) : course.certificateUrl ? (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 font-mono"
+                        asChild
+                      >
+                        <Link
+                          href={course.certificateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <ArrowTopRightOnSquareIcon className="h-4 w-4" />
+                          CERTIFICADO
+                        </Link>
+                      </Button>
+                    ) : null}
+                  </>
+                )}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </MotionDiv>
+
+      {/* Modal do Certificado */}
+      {course.certificateImage && (
+        <CertificateModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          certificate={{
+            title: course.title,
+            image: course.certificateImage,
+            instructor: course.instructor,
+            completedAt: course.completedAt || "Data não informada",
+          }}
+        />
+      )}
+    </>
+  );
+}
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -514,80 +651,11 @@ export default function Home() {
               viewport={{ once: true }}
             >
               {featuredCourses.map((course, index) => (
-                <MotionDiv
+                <CourseCardWithModal
                   key={course.id}
-                  variants={rotateIn}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  <Card className="futuristic-border bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm hover:from-purple-900/20 hover:to-emerald-900/20 transition-all duration-500 group overflow-hidden cursor-pointer">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-emerald-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <CardHeader className="relative z-10">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-3 h-3 rounded-full bg-purple-400 animate-pulse" />
-                          <CardTitle className="text-white font-mono text-lg">
-                            {course.title}
-                          </CardTitle>
-                        </div>
-                        <span className="text-xs text-gray-400 font-mono">
-                          {course.duration}
-                        </span>
-                      </div>
-                      <CardDescription className="text-gray-300 leading-relaxed">
-                        {course.description}
-                      </CardDescription>
-                      <div className="text-sm text-gray-400 mt-2 font-mono">
-                        <AcademicCapIcon className="h-4 w-4 inline mr-2" />
-                        {course.instructor}
-                      </div>
-                    </CardHeader>
-                    <CardContent className="relative z-10">
-                      <div className="space-y-6">
-                        <div className="flex flex-wrap gap-2">
-                          {course.technologies.slice(0, 3).map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="outline"
-                              className="text-xs font-mono border-gray-600 hover:border-purple-400/50 transition-colors"
-                            >
-                              {tech}
-                            </Badge>
-                          ))}
-                          {course.technologies.length > 3 && (
-                            <Badge
-                              variant="outline"
-                              className="text-xs font-mono border-gray-600"
-                            >
-                              +{course.technologies.length - 3}
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex gap-3">
-                          {course.certificateUrl && (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="w-full border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 font-mono"
-                            >
-                              <Link
-                                href={course.certificateUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2"
-                              >
-                                <ArrowTopRightOnSquareIcon className="h-4 w-4" />
-                                CERTIFICADO
-                              </Link>
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </MotionDiv>
+                  course={course}
+                  index={index}
+                />
               ))}
             </MotionDiv>
 
