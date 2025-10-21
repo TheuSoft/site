@@ -308,7 +308,7 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-2 sm:gap-4 py-6 sm:py-8 max-w-4xl mx-auto"
           >
             {[
-              "REACT",
+              "REDES",
               "NEXT.JS",
               "TYPESCRIPT",
               "IA",
@@ -338,14 +338,14 @@ export default function Home() {
           >
             <Magnetic strength={0.2}>
               <Button
+                asChild
                 size="lg"
-                className="btn-futuristic text-white font-mono px-8 py-4 rounded-none border border-emerald-400/20 hover-lift"
-                disabled
+                className="btn-futuristic text-white font-mono px-8 py-4 rounded-none border border-emerald-400/20 hover-lift bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-600/30 hover:to-blue-600/30 transition-all duration-300"
               >
-                <div className="flex items-center gap-3">
-                  EM DESENVOLVIMENTO
+                <Link href="/sobre" className="flex items-center gap-3">
+                  SOBRE MIM
                   <CodeBracketIcon className="h-5 w-5" />
-                </div>
+                </Link>
               </Button>
             </Magnetic>
           </MotionDiv>
