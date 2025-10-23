@@ -505,7 +505,6 @@ export default function SobrePage() {
                     className="flex items-center gap-3"
                   >
                     ENTRAR EM CONTATO
-                    <HeartIcon className="h-5 w-5" />
                   </Link>
                 </Button>
               </Magnetic>

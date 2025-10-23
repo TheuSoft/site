@@ -16,7 +16,7 @@ export const projects: Project[] = [
       "Drizzle ORM",
       "Vercel",
     ],
-    image: "/certificates/syncliva.png",
+    image: "/projetos/syncliva.png",
     demoUrl: "https://syncliva.vercel.app/",
     githubUrl: "https://github.com/TheuSoft/syncliva",
     featured: true,

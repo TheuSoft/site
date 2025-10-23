@@ -776,16 +776,20 @@ export default function Home() {
             </div>
           </div>
 
-          <Magnetic strength={0.3}>
+          <Magnetic strength={0.1}>
             <Button
+              asChild
               size="lg"
-              className="btn-futuristic text-white font-mono text-lg px-12 py-6 rounded-none border border-emerald-400/20 opacity-50 cursor-not-allowed"
-              disabled
+              className="bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white font-mono px-8"
             >
-              <div className="flex items-center gap-3">
-                EM_CONSTRUÇÃO
-                <ArrowRightIcon className="h-5 w-5" />
-              </div>
+              <Link
+                href="https://wa.me/5534992424044?text=Olá! Vi seu portfólio e gostaria de conversar sobre uma oportunidade."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3"
+              >
+                ENTRAR EM CONTATO
+              </Link>
             </Button>
           </Magnetic>
         </div>
