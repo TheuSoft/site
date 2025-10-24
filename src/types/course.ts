@@ -7,7 +7,7 @@ export interface Course {
   image: string;
   courseUrl?: string;
   certificateUrl?: string;
-  certificateImage?: string; // Caminho para a imagem do certificado
+  certificateImage?: string | string[]; // Caminho para a imagem do certificado (pode ser uma string ou array de strings)
   completedAt?: string; // Data de conclusão
   category: "programming" | "design" | "data" | "marketing" | "business";
   duration: string;

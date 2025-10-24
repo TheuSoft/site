@@ -3,6 +3,41 @@ import { Course } from "@/types/course";
 export const courses: Course[] = [
   {
     id: "1",
+    title: "Bacharelado em Sistemas de Informação",
+    description:
+      "Graduação completa em Sistemas de Informação pela Universidade de Uberaba (Uniube), abrangendo desenvolvimento de software, gestão de TI e análise de sistemas.",
+    longDescription:
+      "Curso superior completo em Sistemas de Informação com foco em desenvolvimento de aplicações, administração de sistemas, banco de dados, redes de computadores, inteligência artificial, engenharia de software e gestão de projetos. Formação sólida tanto em aspectos técnicos quanto em gestão empresarial de TI.",
+    technologies: [
+      "Programação",
+      "Banco de Dados",
+      "Redes",
+      "Engenharia de Software",
+      "Inteligência Artificial",
+      "Gestão de Projetos",
+      "Sistemas Operacionais",
+      "Algoritmos",
+      "Interface Humano-Máquina",
+      "Governança Corporativa",
+      "Marketing Digital",
+      "Administração",
+    ],
+    image: "/certificates/curriculo_page-01.jpg",
+    courseUrl: "https://uniube.br/cursos/graduacao/sistemas-de-informacao/",
+    certificateUrl: "",
+    certificateImage: [
+      "/certificates/curriculo_page-01.jpg",
+      "/certificates/curriculo_page-02.jpg",
+    ],
+    completedAt: "Em andamento - 8º semestre",
+    category: "programming",
+    duration: "4 anos",
+    instructor: "Universidade de Uberaba - Uniube",
+    createdAt: "2022-01-01",
+    updatedAt: "2025-10-24",
+  },
+  {
+    id: "2",
     title: "Prompting Responsável: Maximizar a IA no seu negócio",
     description:
       "Curso completo sobre como utilizar IA de forma responsável e eficiente em ambientes empresariais.",
@@ -30,7 +65,7 @@ export const courses: Course[] = [
     updatedAt: "2025-10-06",
   },
   {
-    id: "2",
+    id: "3",
     title: "Noções básicas de rede",
     description:
       "Fundamentos essenciais de redes de computadores e conceitos básicos de networking.",
