@@ -158,51 +158,52 @@ function CourseCard({ course }: { course: Course }) {
 
 export default function CoursesPage() {
   return (
-    <main className="relative pt-16 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Floating Particles Background */}
       <FloatingParticles />
 
-      {/* Hero Section */}
-      <Section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/5 via-blue-400/5 to-purple-400/5" />
-        <div className="text-center relative z-10">
-          <MotionDiv
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
-              Meus Cursos
-            </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Jornada de aprendizado contínuo em tecnologia, design e
-              desenvolvimento. Cada curso representa um passo na evolução
-              profissional.
+      <main className="relative pt-16 overflow-hidden">
+        {/* Hero Section */}
+        <Section className="pt-32 pb-16">
+          <div className="text-center">
+            <MotionDiv
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                Meus Cursos
+              </h1>
+              <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                Jornada de aprendizado contínuo em tecnologia, design e
+                desenvolvimento. Cada curso representa um passo na evolução
+                profissional.
+              </p>
+            </MotionDiv>
+          </div>
+        </Section>
+
+        {/* Courses Grid */}
+        <Section className="py-16">
+          <div className="mb-8">
+            <p className="text-slate-400">
+              {courses.length} curso{courses.length !== 1 ? "s" : ""} disponível
+              {courses.length !== 1 ? "eis" : ""}
             </p>
+          </div>
+
+          <MotionDiv
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {courses.map((course) => (
+              <CourseCard key={course.id} course={course} />
+            ))}
           </MotionDiv>
-        </div>
-      </Section>
-
-      {/* Courses Grid */}
-      <Section className="py-16">
-        <div className="mb-8">
-          <p className="text-slate-400">
-            {courses.length} curso{courses.length !== 1 ? "s" : ""} disponível
-            {courses.length !== 1 ? "eis" : ""}
-          </p>
-        </div>
-
-        <MotionDiv
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {courses.map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
-        </MotionDiv>
-      </Section>
-    </main>
+        </Section>
+      </main>
+    </div>
   );
 }

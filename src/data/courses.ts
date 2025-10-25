@@ -89,6 +89,33 @@ export const courses: Course[] = [
     createdAt: "2024-05-27",
     updatedAt: "2024-05-27",
   },
+
+  {
+    id: "4",
+    title: "JavaScript Essentials 1 (JSE)",
+    description:
+      "Curso fundamental de JavaScript cobrindo conceitos essenciais da linguagem de programação mais popular para desenvolvimento web.",
+    longDescription:
+      "Curso completo sobre fundamentos de JavaScript, incluindo sintaxe básica, estruturas de controle, funções, objetos, manipulação do DOM e conceitos de programação orientada a objetos. Oferecido pela Cisco Networking Academy como parte do programa de desenvolvimento web.",
+    technologies: [
+      "JavaScript",
+      "ES6+",
+      "DOM Manipulation",
+      "Web Development",
+      "Programming Fundamentals",
+      "Object-Oriented Programming",
+    ],
+    image: "/certificates/javascript_page-01.jpg",
+    courseUrl:
+      "https://www.netacad.com/courses/programming/javascript-essentials-1",
+    certificateImage: "/certificates/javascript_page-01.jpg",
+    completedAt: "Maio 2023",
+    category: "programming",
+    duration: "40 horas",
+    instructor: "Lynn Bloomer - Cisco Networking Academy",
+    createdAt: "2023-05-26",
+    updatedAt: "2023-05-26",
+  },
 ];
 
 export const getCoursesByCategory = (category: string): Course[] => {
