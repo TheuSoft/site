@@ -82,7 +82,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <EnvelopeIcon className="h-5 w-5 text-emerald-400" />
-                <span>matheusmarques150@hotmail.com</span>
+                <span>matheusmcm150@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400 text-sm">
                 <PhoneIcon className="h-5 w-5 text-emerald-400" />

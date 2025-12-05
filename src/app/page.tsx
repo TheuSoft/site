@@ -455,7 +455,7 @@ export default function Home() {
                   transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
                 >
                   <h3 className="text-3xl font-bold text-white mb-4 font-mono">
-                    APRENDENDO
+                    Aperfeiçoando
                   </h3>
                 </MotionDiv>
 
