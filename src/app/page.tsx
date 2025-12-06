@@ -294,7 +294,7 @@ export default function Home() {
 
             <MotionDiv variants={fadeInUp} className="max-w-2xl mx-auto">
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                Aprendiz determinado em TI, atuando em suporte, infraestrutura,
+                Profissional em desenvolvimento na área de TI, atuando em suporte, infraestrutura,
                 segurança, desenvolvimento e gestão de projetos. Busco soluções
                 inovadoras para otimizar processos e evoluir continuamente na
                 área tecnológica.
